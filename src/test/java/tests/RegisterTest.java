@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
-import pages.LoggedUserPage;
+
 
 import java.util.Random;
 
@@ -21,5 +21,4 @@ public class RegisterTest extends BaseTest{
 
         Assert.assertEquals(logoutLink.getText(),"Logout");
     }
-
 }
