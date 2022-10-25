@@ -10,6 +10,9 @@ public class HomePage {
     @FindBy(xpath = "//span[text()='My account']")
        private WebElement MyAccountLink;
 
+    @FindBy(xpath = "//span[text()='Shop']")
+    private WebElement ShopLink;
+
     WebDriver driver;
 
     public HomePage(WebDriver driver){
@@ -21,5 +24,11 @@ public class HomePage {
         MyAccountLink.click();
         return new MyAccountPage(driver);
     }
+
+    public ShopPage openShopPage(){
+        ShopLink.click();
+        return new ShopPage(driver);
+    }
+
 
 }
