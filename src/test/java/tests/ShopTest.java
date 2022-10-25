@@ -46,6 +46,15 @@ public class ShopTest extends BaseTest {
         Assert.assertEquals(orderHeader.getText(), "Orders");
     }
 
+    @Test
+    public void OrderProductTest() {
+        new HomePage(driver)
+                .openShopPage()
+                .openProduct("Java Selenium WebDriver")
+                .addingToCart()
+                .viewCart()
+                .proceedToCheckout();
 
+    }
 
 }
