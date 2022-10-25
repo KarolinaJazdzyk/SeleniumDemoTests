@@ -33,7 +33,7 @@ public class ProductPage {
         return message;
     }
 
-    public CartPage viewCart(){
+    public CartPage viewCart() {
         viewCartButton.click();
         return new CartPage(driver);
     }

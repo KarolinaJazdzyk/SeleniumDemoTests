@@ -7,22 +7,22 @@ import org.openqa.selenium.support.PageFactory;
 
 public class MyAccountPage {
 
-    @FindBy(id="reg_email")
+    @FindBy(id = "reg_email")
     private WebElement regEmailInput;
 
-    @FindBy(id="reg_password")
+    @FindBy(id = "reg_password")
     private WebElement regPasswordInput;
 
-    @FindBy(name="register")
+    @FindBy(name = "register")
     private WebElement registerButton;
 
-    @FindBy(id="username")
+    @FindBy(id = "username")
     private WebElement usernameInput;
 
-    @FindBy(id="password")
+    @FindBy(id = "password")
     private WebElement passwordInput;
 
-    @FindBy(name="login")
+    @FindBy(name = "login")
     private WebElement loginButton;
 
     @FindBy(xpath = "//ul[@class='woocommerce-error']")
@@ -30,38 +30,42 @@ public class MyAccountPage {
 
     private WebDriver driver;
 
-    public MyAccountPage(WebDriver driver){
-        PageFactory.initElements(driver,this);
-        this.driver=driver;
+    public MyAccountPage(WebDriver driver) {
+        PageFactory.initElements(driver, this);
+        this.driver = driver;
     }
 
-    public MyAccountPage setEmail(String email){
+    public MyAccountPage setEmail(String email) {
         regEmailInput.sendKeys(email);
         return this;
     }
-    public MyAccountPage setPassword(String password){
+
+    public MyAccountPage setPassword(String password) {
         regPasswordInput.sendKeys(password);
         return this;
     }
-    public LoggedUserPage clickRegister(){
+
+    public LoggedUserPage clickRegister() {
         registerButton.click();
         return new LoggedUserPage(driver);
     }
 
-    public MyAccountPage setLogin(String email){
+    public MyAccountPage setLogin(String email) {
         usernameInput.sendKeys(email);
         return this;
     }
-    public MyAccountPage setLoginPassword(String password){
+
+    public MyAccountPage setLoginPassword(String password) {
         passwordInput.sendKeys(password);
         return this;
     }
-    public LoggedUserPage loginValidData(){
+
+    public LoggedUserPage loginValidData() {
         loginButton.click();
         return new LoggedUserPage(driver);
     }
 
-    public MyAccountPage loginInvalidData(){
+    public MyAccountPage loginInvalidData() {
         loginButton.click();
         return this;
     }
