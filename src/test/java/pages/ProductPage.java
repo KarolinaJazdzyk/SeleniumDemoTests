@@ -13,6 +13,9 @@ public class ProductPage {
     @FindBy(className = "woocommerce-message")
     private WebElement message;
 
+    @FindBy(xpath = "//div[@class='woocommerce-message']//a[text()='View cart']")
+    private WebElement viewCartButton;
+
 
     private WebDriver driver;
 
@@ -28,5 +31,10 @@ public class ProductPage {
 
     public WebElement getMessage() {
         return message;
+    }
+
+    public CartPage viewCart(){
+        viewCartButton.click();
+        return new CartPage(driver);
     }
 }
